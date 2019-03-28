@@ -4,9 +4,9 @@ public class Heap
     int heap[];
     int size;
     int maxsize;
-    Heap(int maxsize)
+    Heap(int max)
     {
-        this.maxsize=maxsize+1;
+        maxsize=max+1;
         size=0;
         heap=new int[maxsize];
     }
