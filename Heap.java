@@ -31,31 +31,16 @@ public class Heap
     }   
     int delete()
     {
-        int parent, child;
-        int item, temp;
-        if(size==0)
+		if(size==0)
         {
             System.out.println("EMPTY");
             return -9999;
         }
-        item=heap[1];
+        int item=heap[1];
         heap[1]=heap[size];
         size--;
-        temp=heap[1];
-        parent=1;
-        child=2;
-        while(child<=size)
-        {
-            if((child+1<=size)&&(heap[child]<heap[child+1]))
-                child++;
-            if(temp>=heap[child])
-            break;
-            heap[parent]=heap[child];
-            parent=child;
-            child*=2;
-        }
-        heap[parent]=temp;
-        return(item);
+        buildMaxHeap();
+		return item;
     }
     void buildMaxHeap()
     {
